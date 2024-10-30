@@ -6,7 +6,7 @@
     section.seccion-principal(:class="{'seccion-principal--barra-avance-open' : !menuState}")
       router-view
   BarraAvance
-  Accesibilidad
+  //- Accesibilidad
 
 </template>
 

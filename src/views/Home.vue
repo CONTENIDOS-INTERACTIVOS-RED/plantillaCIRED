@@ -6,7 +6,7 @@
         //- Columna izquierda con imagen
         .col-md-6.imagen-section
           img.img-fluid(
-            src="@/assets/portada/chica-laptop.png"
+            src="@/assets/portada/banner.png"
             alt="Estudiante virtual"
             style="max-width: 672px;"
           )
@@ -17,24 +17,19 @@
               src="@/assets/portada/logo-xs.png"
               alt="Logo Tecnológica del Oriente"
             )
-            h1.mb-5 PREPARACIÓN INTEGRAL PARA EL TRABAJO EN MODALIDAD VIRTUAL
-            p.descripcion.mb-4
-              | Este programa de formación está diseñado para equiparte con las
-              | habilidades y herramientas esenciales para desenvolverte con éxito
-              | en entornos digitales. A lo largo del curso, aprenderás a gestionar
-              | tu tiempo y tu aprendizaje de manera autónoma, dominarás el uso de
-              | plataformas LMS y herramientas digitales, y desarrollarás
-              | competencias clave para el manejo ético de la información.
+            h1.mb-5 DERECHO CIVIL GENERAL PERSONAS
+            p.descripcion.mb-4 La Unidad 1 introduce los fundamentos esenciales del Derecho Civil, una rama del derecho privado que regula las relaciones entre personas bajo un principio de igualdad. Se estudian los conceptos clave, las fuentes del Derecho Civil, y se distingue entre personas naturales y jurídicas, sentando una base sólida para entender su relevancia en la vida cotidiana, en ámbitos como el familiar, contractual y patrimonial.
 
-            p #[strong ¡Prepárate para afrontar los retos del trabajo virtual con confianza y eficacia!]
+            p.descripcion.mb-4 Este conocimiento permite al estudiante comprender los principios que rigen el Derecho Civil y aplicar estos conceptos en situaciones prácticas, consolidando una formación jurídica que facilitará su desarrollo profesional en el campo legal.
+
             .button-container
-              button.btn-iniciar
+              router-link.btn-iniciar(:to="{ name: 'Introduccion' }")
                 | INICIAR 
                 i.fas.fa-arrow-right
 
   //- Footer
   footer.footer.bg-white
-    .container.px-4.py-5
+    .container.px-4.py-4
       .row.justify-content-start.align-items-center
         .col-lg-auto
           img.logo-footer(
@@ -106,5 +101,9 @@ h1 {
 .footer {
   margin-top: auto; /* Empuja el footer al fondo */
   width: 100%;
+}
+
+.footer p {
+  font-size: 14px;
 }
 </style>
