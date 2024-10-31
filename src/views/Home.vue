@@ -23,9 +23,10 @@
             p.descripcion.mb-4 Este conocimiento permite al estudiante comprender los principios que rigen el Derecho Civil y aplicar estos conceptos en situaciones prácticas, consolidando una formación jurídica que facilitará su desarrollo profesional en el campo legal.
 
             .button-container
-              router-link.btn-iniciar(:to="{ name: 'Introduccion' }")
-                | INICIAR 
-                i.fas.fa-arrow-right
+              router-link.btn-iniciar(:to="{ name: 'tema1' }")
+                span INICIAR
+                div.icon
+                  i.fas.fa-chevron-right
 
   //- Footer
   footer.footer.bg-white
@@ -36,7 +37,7 @@
             src="@/assets/portada/logo-footer.png"
             alt="Logo Tecnológica del Oriente"
           )
-        .col-lg
+        .col-lg.px-0
           p.footer-text.mb-0 Este material puede ser distribuido, copiado y exhibido por terceros si se muestra en los créditos. No se puede obtener ningún beneficio comercial y las obras derivadas tienen que estar bajo los mismos términos de la licencia que el trabajo original.
 </template>
 
@@ -71,7 +72,27 @@ export default {
 }
 
 .btn-iniciar {
-  display: inline-block;
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: fit-content;
+  margin-left: auto;
+  span {
+    background-color: #1172b3;
+    display: block;
+    padding: 12px 42px 12px 32px;
+    color: #fff;
+  }
+  .icon {
+    background-color: #083e61;
+    padding: 0px 20px;
+    color: #fff;
+    position: absolute;
+    right: -40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
   /* Aquí tus estilos existentes para el botón */
 }
 
@@ -93,7 +114,6 @@ h1 {
 }
 
 .logo-footer {
-  height: 30px; /* Ajusta según necesites */
   width: auto;
   object-fit: contain;
 }
@@ -101,6 +121,11 @@ h1 {
 .footer {
   margin-top: auto; /* Empuja el footer al fondo */
   width: 100%;
+  .footer-text {
+    font-size: 14px;
+    border-left: solid 1px #707070;
+    padding-left: 20px;
+  }
 }
 
 .footer p {

@@ -5,36 +5,35 @@ aside
       .aside-menu__black-background(@click="toggleMenu(false)")
       nav.aside-menu__content
         .aside-menu__header
-          h4 Desarrollo de contenidos
+          img(src="@/assets/template/book.svg")
+          h5 Índice temático
         ul.aside-menu__menu
           template(v-for="(item,index) of menuData")
-            li.aside-menu__menu__item(
-              :key="`menu-item-${index}`"
-              :class="{'aside-menu__menu__item--active' : $route.name == item.nombreRuta}"
-            )
-              router-link.aside-menu__menu__item__lnk(
-                :to="{name: item.nombreRuta}"
-                @click.native="toggleMenu(false)"
-              )
-                span(v-if="item.hasOwnProperty('numero')" v-html="item.numero")
-                i(v-if="item.icono" :class="item.icono")
-                span(v-html="item.titulo")
-
-            template(
-              v-if="item.hasOwnProperty('subMenu') && item.subMenu.length"
-            )
-              li.aside-menu__menu__item--sub-menu(
-                v-for="(subItem, subItemIndex) of item.subMenu"
-                :key="`submenu-item-${index}-${subItemIndex}`"
-                :class="{'aside-menu__menu__item--sub-menu--active': $route.hash == `#${subItem.hash}`}"
+            div.aside-menu__menu__item_container
+              li.aside-menu__menu__item(
+                :key="`menu-item-${index}`"
+                :class="{'aside-menu__menu__item--active' : $route.name == item.nombreRuta}"
               )
                 router-link.aside-menu__menu__item__lnk(
-                  :to="{ name: item.nombreRuta , hash: `#${subItem.hash}` }"
+                  :to="{name: item.nombreRuta}"
                   @click.native="toggleMenu(false)"
                 )
-                  i(v-if="subItem.icono" :class="subItem.icono")
-                  span(v-if="subItem.numero" v-html="subItem.numero")
-                  span(v-html="subItem.titulo")
+                  span.title(v-html="item.titulo")
+                  span.title(v-if="item.hasOwnProperty('numero')" v-html="item.numero")
+
+              template(
+                v-if="item.hasOwnProperty('subMenu') && item.subMenu.length"
+              )
+                li.aside-menu__menu__item--sub-menu(
+                  v-for="(subItem, subItemIndex) of item.subMenu"
+                  :key="`submenu-item-${index}-${subItemIndex}`"
+                  :class="{'aside-menu__menu__item--sub-menu--active': $route.hash == `#${subItem.hash}`}"
+                )
+                  router-link.aside-menu__menu__item__lnk(
+                    :to="{ name: item.nombreRuta , hash: `#${subItem.hash}` }"
+                    @click.native="toggleMenu(false)"
+                  )
+                    span(v-html="subItem.titulo")
 
         ul.aside-menu__sec-menu
           template(
@@ -140,11 +139,16 @@ export default {
       overflow-y: auto
 
   &__header
-    padding: 10px
+    display: flex
+    padding: 23px 16px
     text-align: center
-    background-color: $color-sistema-e
-    h4
+    background-color: $white
+    h5
       margin: 0
+      font-weight: normal
+    img
+      margin-right: 12px
+      width: 20px
 
   &__menu
     overflow-y: auto
@@ -152,19 +156,31 @@ export default {
     list-style: none
     padding-left: 0
     margin-bottom: 0
+    background-color: $color-sistema-e
+
+    &__item_container
+      padding: 18px 0px
+      a
+        padding-right: 32px
+        padding-left: 32px
+        padding-bottom: 8px
 
     &__item
+      .title
+        font-size: 14px
+        color: $color-sistema-b
       &--active
         .aside-menu__menu__item__lnk
           background-color: $color-sistema-e
           font-weight: $base-bold-font-weight
 
       &:hover
-        background-color: $color-sistema-e
+        background-color: $white
 
       &--sub-menu
         @extend .aside-menu__menu__item
-        padding-left: 10px
+        a
+          font-size: 16px
         &--active
           .aside-menu__menu__item__lnk
             background-color: $color-sistema-e
@@ -194,7 +210,6 @@ export default {
             margin-right: 0
 
   &__sec-menu
-    background-color: $color-sistema-e
     padding: 10px 0
     flex-shrink: 0
     margin-bottom: 0
@@ -202,6 +217,8 @@ export default {
     &__item
       @extend .aside-menu__menu__item
       padding: 10px 15px
+      &:hover
+        background-color: $color-sistema-e
 
       &__lnk
         @extend .aside-menu__menu__item__lnk
@@ -215,9 +232,6 @@ export default {
           text-align: center
           background-color: $white
           border-radius: 50%
-        &:hover
-          background-color: $white
-
   @media (max-width: $bp-max-xs)
     &__sec-menu
       padding-bottom: 110px

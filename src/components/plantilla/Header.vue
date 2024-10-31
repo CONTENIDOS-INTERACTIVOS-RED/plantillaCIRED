@@ -1,10 +1,9 @@
 <template lang="pug">
-header.header.container-fluid
+header.header.container-fluid(v-if="$route.name !== 'inicio' && $route.name !== 'home'")
   .row.align-items-center.justify-content-between
     .col.col-sm-auto.d-flex.align-items-center.justify-content-between.justify-content-sm-start
       
       .header__menu.me-4.me-sm-5(
-        v-if="$route.name !== 'inicio' && $route.name !== 'home'"
         @click="toggleMenu"
       )
         .header__menu__btn(:class="{'header__menu__btn--open': menuOpen}")
@@ -13,18 +12,14 @@ header.header.container-fluid
           .line-3
         span MENÚ
 
-      img.header__logo.me-4.me-sm-5(src="@/assets/template/logo-sena.svg")
-
       .d-none.d-md-flex.align-items-center(v-if="isInicio")
         a(href="#contenidos").me-5 Contenidos
-
-      .header__componente-formativo(v-else)
-        span(v-html="globalData.componenteFormativo")
 
     .col-auto(v-if="isInicio")
       router-link.boton(:to="{name: iniciarLnk.nombreRuta }")
         span.me-1 Ver contenido
         i(class="fas fa-angle-right")
+  img.header__logo(src="@/assets/template/logo.svg")
 
 </template>
 
@@ -54,6 +49,7 @@ export default {
 
 <style lang="sass" scoped>
 .header
+  display: flex
   position: sticky
   top: 0
   padding-top: 10px
@@ -62,7 +58,10 @@ export default {
   z-index: 10010
   line-height: 1.1em
   &__logo
-    width: 50px
+    position: absolute
+    right: 50%
+    transform: translateX(50%)
+    width: 212px
   &__componente-formativo
     @media (max-width: $bp-max-xs)
       font-size: 0.8em

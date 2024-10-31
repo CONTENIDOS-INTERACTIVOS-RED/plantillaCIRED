@@ -19,22 +19,22 @@ export default {
   },
   menuPrincipal: {
     menu: [
-      {
-        nombreRuta: 'inicio',
-        icono: 'fas fa-home',
-        titulo: 'Volver al inici',
-      },
-      {
-        nombreRuta: 'introduccion',
-        icono: 'fas fa-info-circle',
-        titulo: 'Introducció',
-        desarrolloContenidos: true,
-      },
+      // {
+      //   nombreRuta: 'inicio',
+      //   icono: 'fas fa-home',
+      //   titulo: 'Volver al inici',
+      // },
+      // {
+      //   nombreRuta: 'introduccion',
+      //   icono: 'fas fa-info-circle',
+      //   titulo: 'Introducció',
+      //   desarrolloContenidos: true,
+      // },
       {
         nombreRuta: 'tema1',
         icono: 'far fa-file-alt',
         numero: '1',
-        titulo: 'Componente',
+        titulo: 'Unidad',
         desarrolloContenidos: true,
         subMenu: [
           {
@@ -151,7 +151,7 @@ export default {
         nombreRuta: 'tema2',
         icono: 'far fa-file-alt',
         numero: '2',
-        titulo: 'Producción Audiovisual',
+        titulo: 'Unidad',
         desarrolloContenidos: true,
         subMenu: [
           {
@@ -196,7 +196,7 @@ export default {
         nombreRuta: 'tema3',
         icono: 'far fa-file-alt',
         numero: '3',
-        titulo: 'Fundamentación Textil',
+        titulo: 'Unidad',
         desarrolloContenidos: true,
         subMenu: [
           {
