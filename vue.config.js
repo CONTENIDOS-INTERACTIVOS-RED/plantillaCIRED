@@ -1,6 +1,6 @@
 const titulo = require('./src/config/titulo')
 module.exports = {
-  publicPath: '',
+  publicPath: '/escala-pkg/',
   css: {
     loaderOptions: {
       sass: {
