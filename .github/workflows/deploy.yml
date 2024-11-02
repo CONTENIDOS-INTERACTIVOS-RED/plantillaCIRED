@@ -11,6 +11,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production
+
     steps:
       - name: Checkout deploy branch
         uses: actions/checkout@v2
@@ -27,6 +29,8 @@ jobs:
 
       - name: Build Vue app
         run: npm run build
+        env:
+          VUE_APP_PUBLIC_PATH: ${{ vars.VUE_APP_PUBLIC_PATH }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
