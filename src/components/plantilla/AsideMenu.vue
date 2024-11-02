@@ -18,8 +18,8 @@ aside
                   :to="{name: item.nombreRuta}"
                   @click.native="toggleMenu(false)"
                 )
-                  span.title(v-html="item.titulo")
                   span.title(v-if="item.hasOwnProperty('numero')" v-html="item.numero")
+                  span.title(v-html="item.titulo")
 
               template(
                 v-if="item.hasOwnProperty('subMenu') && item.subMenu.length"
@@ -33,6 +33,7 @@ aside
                     :to="{ name: item.nombreRuta , hash: `#${subItem.hash}` }"
                     @click.native="toggleMenu(false)"
                   )
+                    span.title(v-if="item.hasOwnProperty('numero')" v-html="subItem.numero")
                     span(v-html="subItem.titulo")
 
         ul.aside-menu__sec-menu
@@ -159,16 +160,13 @@ export default {
     background-color: $color-sistema-e
 
     &__item_container
-      padding: 18px 0px
+      padding: 6px 0px
       a
-        padding-right: 32px
-        padding-left: 32px
+        padding-right: 16px
+        padding-left: 16px
         padding-bottom: 8px
 
     &__item
-      .title
-        font-size: 14px
-        color: $color-sistema-b
       &--active
         .aside-menu__menu__item__lnk
           background-color: $color-sistema-e

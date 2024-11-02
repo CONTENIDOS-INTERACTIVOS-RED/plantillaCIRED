@@ -1,8 +1,10 @@
 <template lang="pug">
 .acordion
-  .p-3.pb-0.p-md-4.pb-md-0.mb-3(v-for="(elm, index) of elements" :key="elm.id" :class="cardClass(elm.id)")
+  .mb-3(v-for="(elm, index) of elements" :key="elm.id" :class="cardClass(elm.id)")
     
-    .acordion__header.mb-3.mb-md-4(
+    .acordion__header.mb-3(
+      :style="selected === elm.id ? { backgroundColor: '#F5EEC2' } : {}"
+      :class="{'acordion__header--active' : selected === elm.id}"
       @click="selected = selected != elm.id ? elm.id : 0"
       @mouseover="mostrarIndicador = mostrarIndicador && index === 1 ? false : mostrarIndicador"
     )
@@ -15,7 +17,7 @@
               .indicador--click.indicador--sm
 
         .acordion__titulo
-          h3.mb-0(v-html="elm.titulo")
+          h4.mb-0(v-html="elm.titulo")
 
       .acordion__accion(v-if="tipo === 'b'")
         .acordion__accion__btn--b.h3.mb-0
@@ -25,7 +27,8 @@
             .indicador--click.indicador--sm
     
     .acordion__contenido(
-      :style="{ height: rendered && selected === elm.id ? getActiveHeight(elm.id) : 0 } "
+      :class="{'acordion__contenido--active' : selected === elm.id}"
+      :style="{ height: rendered && selected === elm.id ? getActiveHeight(elm.id) : 0, backgroundColor: selected === elm.id ? '#DBFBFA' : '' } "
     )
       .acordion__contenido__item.pb-3.pb-md-4(:ref="elm.id" v-child="elm.elm")
 

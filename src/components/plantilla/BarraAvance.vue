@@ -1,23 +1,27 @@
 <template lang="pug">
 .barra-avance(:class="[showBarra ? 'barra-avance--open' : 'barra-avance--close']")
 
-  router-link.boton.barra-avance__boton--regresar(
+  span.me-auto.ps-2.ms-1 {{ `${menuData[0].titulo} ${menuData[0].numero}` }}
+
+  router-link.barra-avance__boton--regresar(
     :class="[!controlLinks.back.name && 'barra-avance__boton--disable']"
     :to="{name: controlLinks.back.name, hash: controlLinks.back.hash ? `#${controlLinks.back.hash}` : ''}"
   )
-    i.me-2(class="fas fa-angle-left")
-    span Regresar
+    div.content
+      i.me-3(class="fas fa-arrow-left")
+      span Regresar
   
   //- .barra-avance__barra
   //-   .barra-avance__barra--blanca
   //-   .barra-avance__barra--amarilla
 
-  router-link.boton(
+  router-link.barra-avance__boton--siguiente(
     :class="[!controlLinks.next.name && 'barra-avance__boton--disable']"
     :to="{name: controlLinks.next.name, hash: controlLinks.next.hash ? `#${controlLinks.next.hash}` : ''}"
   )
-    span.me-2 Continuar
-    i(class="fas fa-angle-right")
+    div.content
+      span.me-3 Siguiente
+      i(class="fas fa-arrow-right")
 
 </template>
 
@@ -313,13 +317,13 @@ export default {
 .barra-avance
   display: flex
   align-items: center
-  justify-content: space-between
+  justify-content: end
   position: fixed
   bottom: 0
   left: 0
   width: 100%
-  padding: 10px
-  background-color: $color-sistema-e
+  background-color: $white
+  border: 1px solid #E4E7EC
   transition: transform 0.5s ease-in-out
   z-index: 100000
 
@@ -363,13 +367,24 @@ export default {
         background-color: $color-acento-botones
 
   &__boton
-    &--regresar
-      background-color: $color-sistema-c
-      span
-        color: $color-sistema-a !important
+    &--regresar, &--siguiente
+      padding: 16px 22px
+      border-left: 1px solid #E4E7EC
+
+      .content
+        transition: transform 0.2s ease-in-out
+        transform: translateX(0%)
+
+    &--regresar:hover .content
+      transform: translateX(-6%)
+    &--siguiente:hover .content
+      transform: translateX(6%)
+
     &--disable
-      opacity: 0
       pointer-events: none
+      color: #adb5bd !important
+      background-color: #e9ecef
+      opacity: 0.65
 
   &--open
     transform: translateY(0)

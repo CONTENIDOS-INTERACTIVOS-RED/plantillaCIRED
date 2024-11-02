@@ -10,7 +10,6 @@ header.header.container-fluid(v-if="$route.name !== 'inicio' && $route.name !== 
           .line-2
           .line-1
           .line-3
-        span MENÚ
 
       .d-none.d-md-flex.align-items-center(v-if="isInicio")
         a(href="#contenidos").me-5 Contenidos
@@ -80,9 +79,14 @@ export default {
     height: 30px
     position: relative
     margin-bottom: 4px
+    .line-1
+      width: 25px
+    .line-2
+      width: 30px
+    .line-3
+      width: 15px
     .line-1,.line-2,.line-3
       height: 4px
-      width: 30px
       background-color: $color-sistema-a
       transform-origin: center center
       position: absolute
@@ -95,17 +99,19 @@ export default {
       top: 13px
       animation: line-2-inactive 0.5s ease-in-out forwards
     .line-3
-      top: 22px
+      top: 23px
       animation: line-3-inactive 0.5s ease-in-out forwards
     &:hover
       cursor: pointer
 
     &--open
       .line-1
+        width: 35px
         animation: line-1-active 0.5s ease-in-out forwards
       .line-2
         animation: line-2-active 0.5s ease-in-out forwards
       .line-3
+        width: 35px
         animation: line-3-active 0.5s ease-in-out forwards
 
 @keyframes line-1-active
