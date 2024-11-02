@@ -1,6 +1,6 @@
 const titulo = require('./src/config/titulo')
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/escala-pkg/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/plantillaCIRED/' : '/',
   css: {
     loaderOptions: {
       sass: {
