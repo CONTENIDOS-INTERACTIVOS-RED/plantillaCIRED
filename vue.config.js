@@ -1,6 +1,6 @@
 const titulo = require('./src/config/titulo')
 module.exports = {
-  publicPath: process.env.VUE_APP_PUBLIC_PATH || '',
+  publicPath: process.env.NODE_ENV === 'production' ? '/escala-pkg/' : '/',
   css: {
     loaderOptions: {
       sass: {
