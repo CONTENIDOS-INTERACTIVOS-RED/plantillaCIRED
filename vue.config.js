@@ -1,6 +1,6 @@
 const titulo = require('./src/config/titulo')
 module.exports = {
-  publicPath: '',
+  publicPath: process.env.VUE_APP_PUBLIC_PATH || '',
   css: {
     loaderOptions: {
       sass: {
