@@ -25,7 +25,7 @@
             figure
               img(src='@/assets/template/img-placeholder.svg', alt='Texto que describa la imagen')
               figcaption Leyenda de la imagen
-      .col-md-6.col-lg-5
+      .col-md-6.col-lg-5.col-xl-4.mx-xl-auto
         //- .imagen-titulo--der debe ir acompañado de una de una de estas clases => 
         //- .color-primario, .color-secundario, .color-acento-contenido, .color-acento-botones
         figure
