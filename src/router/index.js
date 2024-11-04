@@ -87,10 +87,10 @@ const router = new VueRouter({
         ),
     },
     {
-      path: '/creditos',
-      name: 'creditos',
+      path: '/sintesis',
+      name: 'sintesis',
       component: () =>
-        import(/* webpackChunkName: "creditos" */ '../views/Creditos.vue'),
+        import(/* webpackChunkName: "sintesis" */ '../views/Sintesis.vue'),
     },
   ],
   scrollBehavior(to, from) {

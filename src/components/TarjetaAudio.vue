@@ -1,8 +1,17 @@
 <template lang="pug">
-.tarjeta-audio
+.tarjeta-audio.p-4
   .row.align-items-center
+    .col-auto.ps-0
+      .audio.position-relative(@mouseover.once="$emit('audio-hover')")
+        slot
+        .spinner-border.spinner-border-sm(v-if="!audioCanPlay" role="status")
+          span.visually-hidden Loading..
+        button.audio__btn(v-else-if="state ==='pause'"  @click="play")
+          img(src="@/assets/template/audio-new.svg")
+        button.audio__btn(v-else @click="pause")
+          img(src="@/assets/template/audio-new.svg")
     .col
-      .tarjeta-audio__texto.h5.fst-italic.mb-0(v-html="texto")
+      .tarjeta-audio__texto.h5(v-html="texto")
       .tarjeta-audio__input.mt-2(v-if="!noBarra")
         input(
           v-model="sliderVal",
@@ -14,15 +23,6 @@
       .tarjeta-audio__tiempo.text-end.pt-1(v-if="tiempo")
         span {{currentTimeDisplay}}
         span {{audioDurationDisplay}}
-    .col-auto.ps-0
-      .audio.position-relative(@mouseover.once="$emit('audio-hover')")
-        slot
-        .spinner-border.spinner-border-sm(v-if="!audioCanPlay" role="status")
-          span.visually-hidden Loading..
-        button.audio__btn(v-else-if="state ==='pause'"  @click="play")
-          img(src="@/assets/template/audio.svg")
-        button.audio__btn(v-else @click="pause")
-          img(src="@/assets/template/pause.svg")
 
 </template>
 

@@ -15,17 +15,34 @@ table
   table
     min-width: 700px
   thead
-    border-top: 5px solid
-    color: $table-header-color
-    background-color: $table-header-bg-color
+    // border-top: 5px solid
+    // color: $table-header-color
+    // background-color: $table-header-bg-color
+    th
+      padding: 24px 18px
+    th:nth-child(even)
+      background-color: #F5EEC2
+    th:nth-child(odd)
+      background-color: #FBF6DB
+
+  th, td
+    border: 0px
 
   th
     border-color: $table-header-bg-color
     font-weight: $base-bold-font-weight
-    text-align: center
+    text-align: start
     font-size: $h4-font-size
 
   tbody
+    tr:nth-child(even)
+      background-color: #F3F3F3
+    tr
+      td
+        padding: 24px 18px
+      td:first-child
+        padding: 20px
+        border-right: 1px solid #D9D9D9
 
   &.color-primario
     thead

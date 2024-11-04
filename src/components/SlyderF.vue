@@ -1,7 +1,7 @@
 <template lang="pug">
 .slyder-f
   
-  .slyder-f__btn.pe-3(@click="clickAnterior")
+  .slyder-f__btn.pe-4(@click="clickAnterior")
     i.fas.fa-chevron-left
   .slyder-f__main(:id="'slyder-f-' + mainId")
     ScrollHorizontal(
@@ -16,7 +16,7 @@
         :class="columnas"
         v-child="item.elm"
       )
-  .slyder-f__btn.ps-3(@click="clickSiguiente")
+  .slyder-f__btn.ps-4(@click="clickSiguiente")
     i.fas.fa-chevron-right
 
   .hidden-slot

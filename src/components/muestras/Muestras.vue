@@ -1023,7 +1023,7 @@ div.mb-5
 
   .row.justify-content-center.mb-5
     .col-md-6
-      SlyderF(columnas="col-12")
+      SlyderF(columnas="col-12 col-lg-6")
         .tarjeta.color-acento-botones.p-4
           .row.justify-content-center.mb-3
             .col-8

@@ -1,13 +1,13 @@
 <template lang="pug">
 .curso-main-container.glosario
-  BannerInterno(icono="fas fa-atlas" titulo="Glosario")
+  BannerInterno(icono="fas fa-atlas" subTitulo="GLOSARIO" titulo="FUNDAMENTACIÓN JURÍDICA - unidad 1")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5.mb-5
     .glosario__letra-item.mb-2(v-for="letra in orderedData" :key="'letra-'+letra.letra")
       .glosario__letra-item__letra.me-4
         .glosario__letra-item__letra__icono
           span {{letra.letra}}
       .glosario__letra-item__texto
-        p.mb-3(v-for="termino in letra.terminos")
+        p.mt-3.mb-4(v-for="termino in letra.terminos")
           strong
             i.lista-ul__vineta
           strong(v-html="termino.terminoHtml || termino.termino") 
@@ -83,16 +83,25 @@ export default {
 .glosario
   &__letra-item
     display: flex
+    flex-direction: column
     &__texto
       padding-top: 5px
     &__letra
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 5%
+        width: 95%
+        height: 3px
+        background-color: $color-sistema-f
       &__icono
         width: 32px
         height: 32px
         position: relative
         line-height: 1em
-        border-radius: 50%
-        background-color: $color-sistema-d
+        background-color: $color-sistema-f
 
         span
           position: absolute

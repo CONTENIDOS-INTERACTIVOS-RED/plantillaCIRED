@@ -70,14 +70,14 @@
   i
     font-size: 2.5em
     color: $color-acento-contenido
-  &:after
-    content: ''
-    display: block
-    width: 30px
-    height: 30px
-    background-color: $color-acento-contenido
-    position: relative
-    left: calc(100% - 30px)
+  // &:after
+  //   content: ''
+  //   display: block
+  //   width: 30px
+  //   height: 30px
+  //   background-color: $color-acento-contenido
+  //   position: relative
+  //   left: calc(100% - 30px)
   &.color-primario
     background-color: $color-primario
   &.color-secundario
@@ -127,6 +127,16 @@
       background-color: $color-acento-botones
 
 .bloque-texto-e
+  &__autor
+    margin-top: 8px
+    display: block !important
+    padding-top: 16px
+    border-top: 1px solid $light-gray
+    text-align: center
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    font-size: 15px
   &__texto
     *
       display: inline
@@ -138,8 +148,6 @@
     &:last-of-type
       margin-left: 15px
       vertical-align: text-top
-  &__autor
-    @extend .bloque-texto-d__autor
   &.color-primario
     background-color: $color-primario
   &.color-secundario

@@ -368,6 +368,7 @@ export default {
 
   &__boton
     &--regresar, &--siguiente
+      color: $color-sistema-texto
       padding: 16px 22px
       border-left: 1px solid #E4E7EC
 
