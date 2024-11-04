@@ -1,13 +1,14 @@
 <template lang="pug">
 .curso-main-container.referencias
-  BannerInterno(icono="fas fa-book" titulo="Referencias bibliográficas")
+  BannerInterno(icono="fas fa-book" subTitulo="Referencias bibliográficas" titulo="FUNDAMENTACIÓN JURÍDICA - unidad 1")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5.mb-5
-    .referencias__item(v-for="ref in orderedData" :key="ref.link")
-      span(v-html="ref.referencia")
-      a.ms-1(v-if="ref.link" :href="ref.link" target="_blank")
-        span(v-html="ref.link")
-        i.ms-1.fas.fa-external-link-alt
-      hr.my-3
+    .referencias__item.d-flex(v-for="(ref, index) in orderedData" :key="ref.link")
+      span.py-4.d-block.me-3(v-html="index + 1")
+      div.py-4.w-100
+        span(v-html="ref.referencia")
+        a.ms-1(v-if="ref.link" :href="ref.link" target="_blank")
+          span(v-html="ref.link")
+          i.ms-1.fas.fa-external-link-alt
 </template>
 <script>
 import BannerInterno from '../components/plantilla/BannerInterno'
@@ -39,6 +40,8 @@ export default {
 <style lang="sass">
 .referencias
   &__item
+    div
+      border-bottom: 3px solid $color-sistema-f
     &:last-child
       hr
         display: none

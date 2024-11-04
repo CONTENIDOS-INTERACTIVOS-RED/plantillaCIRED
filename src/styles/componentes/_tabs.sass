@@ -161,11 +161,14 @@
       border-top-color: $color-acento-botones !important
 
 .tabs-c
-  border-bottom: 1px solid #AFAFAF
+  // border-bottom: 1px solid #AFAFAF
   &__header
-    margin-bottom: 15px
+    // margin-bottom: 15px
+  &__content-item
+    
   &__tab
-    border-bottom: 4px solid $color-sistema-f
+    // border-bottom: 4px solid $color-sistema-f
+    border-bottom: 4px solid transparent
     line-height: $heading-line-height
     text-align: center
     display: flex
@@ -177,11 +180,11 @@
       display: block
       position: absolute
       transform: translate(-50%,-50%)
-    &:after
-      width: 2px
-      height: 20px
-      top: 50%
-      right: -2px
+    // &:after
+    //   width: 2px
+    //   height: 20px
+    //   top: 50%
+    //   right: -2px
       background-color: $color-sistema-f
     &:last-child
       &:after
@@ -202,14 +205,15 @@
 
     &--active
       border-bottom: 4px solid !important
-      &:before
-        width: 0
-        height: 0
-        border-left: 10px solid transparent
-        border-right: 10px solid transparent
-        border-top: 10px solid
-        left: 50%
-        top: calc(100% + 6px)
+      font-weight: $base-bold-font-weight
+      // &:before
+      //   width: 0
+      //   height: 0
+      //   border-left: 10px solid transparent
+      //   border-right: 10px solid transparent
+      //   border-top: 10px solid
+      //   left: 50%
+      //   top: calc(100% + 6px)
 
       &:active, &:focus, &:hover
         background-color: transparent
@@ -217,25 +221,25 @@
         font-weight: $base-bold-font-weight
 
   &.color-primario
-    .tabs-c__tab--active
-      border-bottom-color: $color-primario !important
-      &:before
-        border-top-color: $color-primario
+    // .tabs-c__tab--active
+    //   border-bottom-color: $color-primario !important
+    //   &:before
+    //     border-top-color: $color-primario
   &.color-secundario
-    .tabs-c__tab--active
-      border-bottom-color: $color-secundario !important
-      &:before
-        border-top-color: $color-secundario
+    // .tabs-c__tab--active
+    //   border-bottom-color: $color-secundario !important
+    //   &:before
+    //     border-top-color: $color-secundario
   &.color-acento-contenido
-    .tabs-c__tab--active
-      border-bottom-color: $color-acento-contenido !important
-      &:before
-        border-top-color: $color-acento-contenido
+    // .tabs-c__tab--active
+    //   border-bottom-color: $color-acento-contenido !important
+    //   &:before
+    //     border-top-color: $color-acento-contenido
   &.color-acento-botones
-    .tabs-c__tab--active
-      border-bottom-color: $color-acento-botones !important
-      &:before
-        border-top-color: $color-acento-botones
+    // .tabs-c__tab--active
+    //   border-bottom-color: $color-acento-botones !important
+    //   &:before
+    //     border-top-color: $color-acento-botones
 
 .fade-enter-active, .fade-leave-active
   transition: opacity .5s

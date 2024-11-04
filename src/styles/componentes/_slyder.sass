@@ -1,37 +1,34 @@
 .slyder-a
   position: relative
+  box-shadow: 0 2px 4px 1px rgba(0,0,0,0.25)
+  padding: 0px
   &__btn
     &--sigt, &--atrs
       width: 50px
       height: 50px
-      background-color: $white
-      border-radius: 50%
-      background-image: url('../assets/componentes/arrow.svg')
+      background-image: url('../assets/componentes/arrow-gray.svg')
       background-repeat: no-repeat
-      background-size: 16px 24px
+      background-size: 10px 16px
       background-position: center
-      border: 1px solid $color-sistema-e
       top: 50%
       z-index: 10000
       opacity: 0.7
-      box-shadow: 0 0 0px 0px rgba(0,0,0,0.3)
       transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out
       cursor: pointer
       &:hover
         opacity: 1
-        box-shadow: 0 0 5px 0px rgba(0,0,0,0.3)
         border-color: $white
 
   &__bullets
     display: flex
     z-index: 10000
     &__item
-      width: 15px
-      height: 15px
+      width: 8px
+      height: 8px
       background-color: $white
       border-radius: 50%
       box-shadow: 0 0 5px 0px rgba(0,0,0,0)
-      margin: 0 10px
+      margin: 0 6px
       cursor: pointer
       opacity: 0.7
       transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out
@@ -55,7 +52,7 @@
         &--sigt, &--atrs
           position: absolute
         &--sigt
-          transform: translateY(-50%) rotate(-90deg)
+          transform: translateY(-50%) rotate(-80deg)
           right: 15px
           .indicador__container
             transform: translateY(15px) rotate(90deg)
@@ -75,16 +72,17 @@
     display: flex
     justify-content: space-between
     align-items: center
+    background-color: #105080
     .slyder-a
       &__btn
         &--sigt
-          transform: rotate(-90deg)
+          transform: rotate(-180deg)
           right: 15px
           .indicador__container
             transform: rotate(90deg)
 
         &--atrs
-          transform: rotate(90deg)
+          transform: rotate(360deg)
           left: 15px
 
       &__bullets
@@ -160,10 +158,16 @@
     display: flex
     align-items: center
     justify-content: center
-    cursor: pointer
     i
-      font-size: 4rem
+      background-color: $color-sistema-a
+      cursor: pointer
+      padding: 15px 18px
+      font-size: 1.15rem
+      color: #93B0C6
+      box-shadow: 1px 6px 10px -2px rgba(0,0,0,0.2)
 
   &__slyde
+    // box-shadow: 1px 6px 10px -2px rgba(0,0,0,0.2)
+    // margin: 15px
     & > .tarjeta
       height: 100%

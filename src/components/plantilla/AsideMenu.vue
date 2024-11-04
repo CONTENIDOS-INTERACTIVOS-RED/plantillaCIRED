@@ -104,7 +104,7 @@ export default {
 <style lang="sass">
 .aside-menu
   position: fixed
-  top: 70px
+  top: 54px
   min-height: calc(100vh - 70px)
   max-height: calc(100vh - 70px)
   background-color: $color-sistema-g
@@ -116,7 +116,7 @@ export default {
   &__black-background
     position: fixed
     inset: 0
-    top: 70px
+    top: 54px
     background: transparentize($black, 0.2)
     cursor: pointer
 
@@ -157,7 +157,7 @@ export default {
     list-style: none
     padding-left: 0
     margin-bottom: 0
-    background-color: $color-sistema-e
+    background-color: $color-sistema-h
 
     &__item_container
       padding: 6px 0px
@@ -169,7 +169,7 @@ export default {
     &__item
       &--active
         .aside-menu__menu__item__lnk
-          background-color: $color-sistema-e
+          background-color: $color-sistema-h
           font-weight: $base-bold-font-weight
 
       &:hover
@@ -198,7 +198,7 @@ export default {
       &__lnk
         display: flex
         align-items: center
-        padding: 10px 15px
+        padding: 18px 15px
         line-height: 1.1em
 
 
@@ -216,7 +216,7 @@ export default {
       @extend .aside-menu__menu__item
       padding: 10px 15px
       &:hover
-        background-color: $color-sistema-e
+        background-color: $color-sistema-h
 
       &__lnk
         @extend .aside-menu__menu__item__lnk
@@ -228,7 +228,6 @@ export default {
           height: 2em
           padding: 0.5em 0
           text-align: center
-          background-color: $white
           border-radius: 50%
   @media (max-width: $bp-max-xs)
     &__sec-menu
