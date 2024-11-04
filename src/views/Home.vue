@@ -5,7 +5,7 @@
       .bg-white
         .row.g-0
           //- Columna izquierda con imagen
-          .d-none.d-md-block.d-lg-flex.mb-4.mb-md-0.col-md-4.imagen-section
+          .d-none.d-md-block.d-lg-flex.mb-4.mb-md-0.col-md-4.col-xl-5.imagen-section
             img.img-fluid.h-full(
               src="@/assets/portada/banner.png"
               alt="Estudiante virtual"
@@ -18,7 +18,7 @@
               style="max-width: 672px;"
             )
           //- Columna derecha con información
-          .col-md-8.info-section
+          .col-md-8.col-xl-7.info-section
             .content-wrapper.px-xl-5.pt-xl-5.text-start
               p.home-main-title FUNDAMENTACIÓN JURÍDICA
               h1.home-title.mb-4.text-uppercase Introducción a la Paz y Resolución de Conflictos - Causas y Dinámicas del Conflicto
@@ -26,7 +26,7 @@
 
               p.descripcion.mb-4.text-bold ¡Prepárate para aplicar herramientas de resolución de conflictos con confianza y eficacia!
 
-              .button-container.mt-5
+              .button-container.mt-auto
                 router-link.btn-iniciar(:to="{ name: 'tema1' }")
                   span INICIAR
                   div.icon
@@ -53,86 +53,90 @@ export default {
 </script>
 
 <style lang="sass">
-.home-title
-  font-size: 26px
-  font-weight: normal
-.home-main-title
-  font-size: 18px
-  font-weight: bold
-  color: $color-sistema-d
-.home-content
-  background-color: white
-.info-section
-  position: relative
-  min-height: 100%
-  display: flex
-  flex-direction: column
-  border-bottom: 1px solid $color-sistema-f
-  @media (min-width: 576px)
-    padding-right: 2rem
-    padding-bottom: 2rem
-
-.content-wrapper
-  display: flex
-  flex-direction: column
-  height: 100%
-
-.button-container
-  margin-top: auto
-  text-align: right
-
-.btn-iniciar
-  display: flex
-  position: relative
-  align-items: center
-  width: calc(100% - 48px)
-  @media (min-width: 576px)
-    margin-left: auto
-    width: fit-content
-  span
-    text-align: center
-    background-color: $color-sistema-d
-    display: block
-    width: 100%
-    padding: 12px 42px 12px 32px
-    color: #fff
-  .icon
-    background-color: $color-sistema-e
-    padding: 0px 20px
-    color: #fff
-    position: absolute
-    right: -40px
-    height: 100%
+.curso-container
+  .container
+    @media (min-width: 1400px)
+      max-width: 1378px
+  .home-title
+    font-size: 26px
+    font-weight: normal
+  .home-main-title
+    font-size: 18px
+    font-weight: bold
+    color: $color-sistema-d
+  .home-content
+    background-color: white
+  .info-section
+    position: relative
+    min-height: 100%
     display: flex
+    flex-direction: column
+    border-bottom: 1px solid $color-sistema-f
+    @media (min-width: 576px)
+      padding-right: 2rem
+      padding-bottom: 2rem
+
+  .content-wrapper
+    display: flex
+    flex-direction: column
+    height: 100%
+
+  .button-container
+    margin-top: auto
+    text-align: right
+
+  .btn-iniciar
+    display: flex
+    position: relative
     align-items: center
-  /* Aquí tus estilos existentes para el botón */
+    width: calc(100% - 48px)
+    @media (min-width: 576px)
+      margin-left: auto
+      width: fit-content
+    span
+      text-align: center
+      background-color: $color-sistema-d
+      display: block
+      width: 100%
+      padding: 12px 42px 12px 32px
+      color: #fff
+    .icon
+      background-color: $color-sistema-e
+      padding: 0px 20px
+      color: #fff
+      position: absolute
+      right: -40px
+      height: 100%
+      display: flex
+      align-items: center
+    /* Aquí tus estilos existentes para el botón */
 
-.home
-  padding: 20px
-  text-align: center
+  .home
+    padding: 20px
+    text-align: center
 
-h1
-  color: #2c3e50
+  h1
+    color: #2c3e50
 
-.logo
-  height: 40px
-  width: auto
-  margin-bottom: 1.5rem
-  object-fit: contain
-  align-self: flex-start /* Asegura alineación izquierda incluso en contenedor flex */
+  .logo
+    height: 40px
+    width: auto
+    margin-bottom: 1.5rem
+    object-fit: contain
+    align-self: flex-start /* Asegura alineación izquierda incluso en contenedor flex */
 
-.logo-footer
-  width: 250px
-  object-fit: contain
+  .logo-footer
+    width: 250px
+    object-fit: contain
 
-.footer
-  margin-top: auto /* Empuja el footer al fondo */
-  width: 100%
-  .footer-text
+  .footer
+    margin-top: auto /* Empuja el footer al fondo */
+    width: 100%
+    .footer-text
+      font-size: 14px
+      border-left: solid 1px #707070
+      padding-left: 20px
+
+  .footer p
     font-size: 14px
-    border-left: solid 1px #707070
-    padding-left: 20px
-
-.footer p
-  font-size: 14px
 </style>
