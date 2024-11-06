@@ -5,7 +5,7 @@ aside
       .aside-menu__black-background(@click="toggleMenu(false)")
       nav.aside-menu__content
         .aside-menu__header
-          img(src="@/assets/template/book.svg")
+          img(src="@/assets/template/home.svg")
           h5 Índice temático
         ul.aside-menu__menu
           template(v-for="(item,index) of menuData")
@@ -160,40 +160,42 @@ export default {
     background-color: $color-sistema-h
 
     &__item_container
+      position: relative
       padding: 6px 0px
       a
-        padding-right: 16px
-        padding-left: 16px
-        padding-bottom: 8px
+        padding: 12px 18px
 
     &__item
+      position: relative
       &--active
+        position: relative
         .aside-menu__menu__item__lnk
-          background-color: $color-sistema-h
-          font-weight: $base-bold-font-weight
+          // background-color: $color-sistema-h
+          // font-weight: $base-bold-font-weight
 
       &:hover
         background-color: $white
+        a
+          font-weight: $base-bold-font-weight
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 4px
+          height: 100%
+          background-color: $color-institucional
 
       &--sub-menu
         @extend .aside-menu__menu__item
+        position: relative
         a
           font-size: 16px
         &--active
           .aside-menu__menu__item__lnk
-            background-color: $color-sistema-e
+            background-color: $white
             font-weight: $base-bold-font-weight
             position: relative
-            &::before
-              content: ''
-              display: block
-              position: absolute
-              left: 0
-              bottom: 0
-              top: 0
-              width: 4px
-              border-radius: 2px
-              background-color: $color-acento-contenido
 
       &__lnk
         display: flex
@@ -217,6 +219,8 @@ export default {
       padding: 10px 15px
       &:hover
         background-color: $color-sistema-h
+        &::before
+          display: none !important
 
       &__lnk
         @extend .aside-menu__menu__item__lnk

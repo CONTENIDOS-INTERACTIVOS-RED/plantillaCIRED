@@ -18,7 +18,8 @@ header.header.container-fluid(v-if="$route.name !== 'inicio' && $route.name !== 
       router-link.boton(:to="{name: iniciarLnk.nombreRuta }")
         span.me-1 Ver contenido
         i(class="fas fa-angle-right")
-  img.header__logo(src="@/assets/template/logo.svg")
+  router-link(to="/")
+    img.header__logo(src="@/assets/template/logo.svg")
 
 </template>
 
