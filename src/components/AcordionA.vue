@@ -2,9 +2,10 @@
 .acordion
   .mb-3(v-for="(elm, index) of elements" :key="elm.id" :class="cardClass(elm.id)")
     
-    .acordion__header.mb-3(
+    .acordion__header.mb-0(
       @click="selected = selected != elm.id ? elm.id : 0"
       @mouseover="mostrarIndicador = mostrarIndicador && index === 1 ? false : mostrarIndicador"
+      :class="{'acordion__header--active' : selected === elm.id}"
     )
       .d-flex.align-items-center
         .acordion__accion(v-if="tipo === 'a'")
@@ -27,7 +28,7 @@
     .acordion__contenido(
       :style="{ height: rendered && selected === elm.id ? getActiveHeight(elm.id) : 0 } "
     )
-      .acordion__contenido__item.pb-3.pb-md-4(:ref="elm.id" v-child="elm.elm")
+      .acordion__contenido__item.py-3.pb-md-4(:ref="elm.id" v-child="elm.elm")
 
   .hidden-slot
     slot

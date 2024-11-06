@@ -24,12 +24,12 @@ export default {
       //   icono: 'fas fa-home',
       //   titulo: 'Volver al inici',
       // },
-      // {
-      //   nombreRuta: 'introduccion',
-      //   icono: 'fas fa-info-circle',
-      //   titulo: 'Introducció',
-      //   desarrolloContenidos: true,
-      // },
+      {
+        nombreRuta: 'introduccion',
+        icono: 'fas fa-info-circle',
+        titulo: 'Introducció',
+        desarrolloContenidos: true,
+      },
       {
         nombreRuta: 'tema1',
         icono: 'far fa-file-alt',
