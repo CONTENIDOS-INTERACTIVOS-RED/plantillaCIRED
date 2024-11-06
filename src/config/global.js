@@ -19,11 +19,11 @@ export default {
   },
   menuPrincipal: {
     menu: [
-      // {
-      //   nombreRuta: 'inicio',
-      //   icono: 'fas fa-home',
-      //   titulo: 'Volver al inici',
-      // },
+      {
+        nombreRuta: 'inicio',
+        icono: 'fas fa-home',
+        titulo: 'Volver al inici',
+      },
       {
         nombreRuta: 'introduccion',
         icono: 'fas fa-info-circle',

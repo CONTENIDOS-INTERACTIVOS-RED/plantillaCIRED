@@ -31,5 +31,5 @@ export default {
 
 <style lang="sass">
 body
-  background-color: $color-institucional !important
+  background-color: $app-fondo !important
 </style>

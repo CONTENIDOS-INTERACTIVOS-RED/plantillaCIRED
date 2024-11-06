@@ -5,7 +5,7 @@
       .bg-white
         .row.g-0
           //- Columna izquierda con imagen
-          .d-none.d-lg-block.d-lg-flex.mb-4.mb-md-0.col-md-4.col-xl-5.imagen-section
+          .d-none.d-xl-block.d-xl-flex.mb-4.mb-md-0.col-md-4.col-xl-5.imagen-section
             img.img-fluid.h-full(
               src="@/assets/portada/banner.png"
               alt="Estudiante virtual"
@@ -18,13 +18,13 @@
               style="max-width: 672px;"
             )
           //- Columna derecha con información
-          .col-lg-8.col-xl-7.info-section
+          .col-xl-7.info-section
             .content-wrapper.px-lg-4.pt-lg-4.px-xl-5.py-xl-5.text-start
-              p.home-main-title FUNDAMENTACIÓN JURÍDICA
-              h1.home-title.mb-4.text-uppercase Introducción a la Paz y Resolución de Conflictos - Causas y Dinámicas del Conflicto
-              p.descripcion.mb-4 En esta unidad, se diferenciará entre paz negativa (ausencia de violencia) y paz positiva (justicia y bienestar), explorando la "cultura de paz" promovida por la UNESCO, que fomenta el diálogo y la cooperación para una convivencia pacífica. Con estas herramientas, el estudiante podrá identificar factores que generan conflictos y proponer soluciones basadas en la mediación y la colaboración.
+              p.home-main-title Desarrollo Físico y Motor en Niños y Adolescentes
+              h1.home-title.mb-4.text-uppercase Desarrollo y Ciclo Vital: Niños y Adolescentes
+              p.descripcion.mb-4 Esta unidad, Desarrollo Físico y Motor en Niños y Adolescentes, explora los cambios corporales y habilidades motrices clave desde la niñez hasta la adolescencia. Los estudiantes comprenderán cómo factores como genética, nutrición y entorno influyen en el crecimiento y las transformaciones hormonales de la pubertad, lo cual les permitirá apoyar a los jóvenes en cada etapa de su desarrollo.
 
-              p.descripcion.mb-4.mb-lg-5.pb-lg-4.text-bold ¡Prepárate para aplicar herramientas de resolución de conflictos con confianza y eficacia!
+              p.descripcion.mb-4.mb-lg-5.pb-lg-4.text-bold ¡El éxito está en cada esfuerzo que haces hoy!
 
               .button-container.mt-auto
                 router-link.btn-iniciar.w-100.w-md-auto(:to="{ name: 'tema1' }")
@@ -74,7 +74,7 @@ export default {
     min-height: 100%
     display: flex
     flex-direction: column
-    @media (min-width: 992px)
+    @media (min-width: 1200px)
       border-bottom: 1px solid $color-sistema-f
 
   .content-wrapper
