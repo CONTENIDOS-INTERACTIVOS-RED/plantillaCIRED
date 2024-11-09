@@ -27,7 +27,7 @@ export default {
       {
         nombreRuta: 'introduccion',
         icono: 'fas fa-info-circle',
-        titulo: 'Introducció',
+        titulo: 'Introducción',
         desarrolloContenidos: true,
       },
       {

@@ -237,6 +237,11 @@ export default {
     &__sec-menu
       padding-bottom: 110px
 
+.aside-menu__menu__item--active
+  background-color: white
+  span
+    font-weight: 900
+
 .main-menu-enter-active
   animation: main-menu-open-animation .3s;
   .aside-menu__black-background
