@@ -137,4 +137,23 @@ export default {
 
   .footer p
     font-size: 14px
+
+.iniciar-btn-container
+  .iniciar-btn-text
+    transition: all 0.4s ease-in-out
+    background-color: #9EF0FD !important
+    color: #0B0A0A !important
+  .icon
+    transition: all 0.4s ease-in-out
+    background-color: #083E61 !important
+  &:hover
+    .iniciar-btn-text
+      background-color: #083E61 !important
+      color: white !important
+    .icon
+      background-color: #9EF0FD !important
+      color: #0B0A0A !important
+
+.home-main-title
+  color: #E5782C !important
 </style>
