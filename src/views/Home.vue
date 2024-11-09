@@ -66,7 +66,7 @@ export default {
   .home-main-title
     font-size: 18px
     font-weight: bold
-    color: $color-sistema-d
+    color: $color-institucional
   .home-content
     background-color: white
   .info-section
@@ -153,7 +153,4 @@ export default {
     .icon
       background-color: #9EF0FD !important
       color: #0B0A0A !important
-
-.home-main-title
-  color: #E5782C !important
 </style>
