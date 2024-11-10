@@ -107,7 +107,6 @@ export default {
   top: 54px
   min-height: calc(100vh - 70px)
   max-height: calc(100vh - 70px)
-  background-color: $color-sistema-g
   transition: flex 0.5s ease-in-out, width 0.5s ease-in-out
   overflow-x: hidden
   z-index: 100001
@@ -121,7 +120,7 @@ export default {
     cursor: pointer
 
   a
-    color: $color-sistema-a
+    color: $color-sistema-texto
 
   &__content
     width: 300px
@@ -130,7 +129,6 @@ export default {
     justify-content: space-between
     min-height: calc(100vh - 70px)
     max-height: calc(100vh - 70px)
-    border-right: 1px solid $color-sistema-e
     position: absolute
     background: $white
 
@@ -157,7 +155,7 @@ export default {
     list-style: none
     padding-left: 0
     margin-bottom: 0
-    background-color: $color-sistema-h
+    background-color: $bg-menu
 
     &__item_container
       position: relative
@@ -184,7 +182,7 @@ export default {
           left: 0
           width: 4px
           height: 100%
-          background-color: $color-institucional
+          background-color: $border-color-items-hover
 
       &--sub-menu
         @extend .aside-menu__menu__item
@@ -218,7 +216,9 @@ export default {
       @extend .aside-menu__menu__item
       padding: 10px 15px
       &:hover
-        background-color: $color-sistema-h
+        background-color: $bg-subcategory-items-hover
+        span, i
+          color: $color-sistema-texto
         &::before
           display: none !important
 
@@ -226,6 +226,8 @@ export default {
         @extend .aside-menu__menu__item__lnk
         padding: 0
         border-radius: 1em
+        span, i
+          color: $subcategory-color
         i
           display: block
           width: 2em
@@ -243,7 +245,7 @@ export default {
     font-weight: 900
 
 .main-menu-enter-active
-  animation: main-menu-open-animation .3s;
+  animation: main-menu-open-animation .3s
   .aside-menu__black-background
     animation:  main-menu-background-animation .3s
 
