@@ -2,8 +2,10 @@
 .curso-main-container.pb-3
   BannerInterno(:titulo="'FUNDAMENTACIÓN JURÍDICA - unidad 1'" :subTitulo="'INTRODUCCIÓN'")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5.overflow-hidden
-    #t_1_1.titulo-segundo.color-secundario
-      h2 1.1  Título de segundo
+    #t_1_1.titulo-segundo
+      div.d-flex
+        span.me-3 1.1  
+        h2 Título de segundo
     .row.justify-content-between.mb-5
       .col-md-6.col-lg-7
         p Desde los inicios de la humanidad, las reglas han sido un elemento fundamental para el desarrollo de las sociedades. El Derecho, en este contexto, se presenta como una herramienta indispensable para el buen funcionamiento de la convivencia. En esta primera unidad, se profundizará en el concepto de Derecho, su propósito y origen, así como en el proceso de creación de normas que regulan nuestras actividades diarias, las relaciones entre individuos y el Estado, y las normas que operan en el ámbito global.
@@ -114,25 +116,27 @@
           .tarjeta.color-acento-botones.p-3(x="9%" y="81%" numero="+")
             .h5.mb-2 titulo
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum tortor at blandit congue. Pellentesque vel felis posuere, molestie metus
-    .row.material-complementario
-      h2 MATERIAL COMPLEMENTARIO
-      .col-12.col-md-6.col-lg-7
-        p Los invitamos a explorar el material complementario de este curso, en esta sección encontrará recursos que le permitirán profundizar  y enriquecer su aprendizaje en los temas tratados en esta unidad.
-        p.d-flex.my-4
-          img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-          span Peña, G. E. G. (2021). Las fuentes del derecho. Lecciones de introducción al derecho, 189
-        p.d-flex.my-4
-          img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-          span Suárez, E. (2020). Introducción al derecho. Ediciones UNL
-        p.d-flex.my-4
-          img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-          span De Sousa, M. T. (2019). Introducción al derecho. Temis 
-        p.d-flex.my-4
-          img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-          span Nieto, A. (2019). Una introducción al derecho.
-      .col-12.col-md-6.col-lg-3.offset-lg-1
-        figure
-          img(src='@/assets/componentes/material-complementario.svg', alt='Texto que describa la imagen')
+    .bg-full-width.border-top.color-primario
+      .px-4.p-md-5
+        h2 MATERIAL COMPLEMENTARIO
+        .row
+          .col-12.col-md-6.col-lg-7
+            p Los invitamos a explorar el material complementario de este curso, en esta sección encontrará recursos que le permitirán profundizar  y enriquecer su aprendizaje en los temas tratados en esta unidad.
+            p.d-flex.my-4
+              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span Peña, G. E. G. (2021). Las fuentes del derecho. Lecciones de introducción al derecho, 189
+            p.d-flex.my-4
+              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span Suárez, E. (2020). Introducción al derecho. Ediciones UNL
+            p.d-flex.my-4
+              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span De Sousa, M. T. (2019). Introducción al derecho. Temis 
+            p.d-flex.my-4
+              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span Nieto, A. (2019). Una introducción al derecho.
+          .col-12.col-md-6.col-lg-3.offset-lg-1
+            figure
+              img(src='@/assets/componentes/material-complementario.svg', alt='Texto que describa la imagen')
 </template>
 
 <script>
@@ -161,7 +165,4 @@ export default {
   background-color: $color-sistema-h
 .img-infografica
   background-color: $color-adicional-1
-.material-complementario
-  padding-top: 3rem
-  border-top: 9px solid $color-sistema-e
 </style>
