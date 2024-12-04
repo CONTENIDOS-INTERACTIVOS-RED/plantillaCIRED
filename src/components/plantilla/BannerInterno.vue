@@ -3,8 +3,8 @@
     .banner-interno__fondo
     .container
       .banner-interno__titulo.py-5
-        h3(v-html="titulo")
-        h2.mb-0(v-html="subTitulo")
+        h3.text-uppercase(v-html="`Unidad ${globalData.numeroUnidad}. ${globalData.tituloUnidad}`")
+        h2.mb-0.text-uppercase(v-html="subTitulo")
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template lang="pug">
 .curso-main-container.creditos-vista
-  BannerInterno(:titulo="'FUNDAMENTACIÓN JURÍDICA - unidad 1'" :subTitulo="'SÍNTESIS'")
+  BannerInterno(subTitulo="SÍNTESIS")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5
     p.mb-4.mb-md-5 La unidad I:  Introducción al derecho y sus fuentes, establece los fundamentos teóricos esenciales para comprender el origen de las normas jurídicas y su aplicación. 
     figure
@@ -9,8 +9,8 @@
 
 </template>
 <script>
-import BannerInterno from '../components/plantilla/BannerInterno'
-import Footer from '../components/plantilla/Footer'
+import BannerInterno from '../../components/plantilla/BannerInterno'
+import Footer from '../../components/plantilla/Footer'
 export default {
   name: 'Creditos',
   components: {

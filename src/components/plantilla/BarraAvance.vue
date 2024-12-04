@@ -1,7 +1,7 @@
 <template lang="pug">
 .barra-avance(:class="[showBarra ? 'barra-avance--open' : 'barra-avance--close']")
 
-  span.me-auto.ps-2.ms-1 Unidad 
+  span.me-auto.ps-2.ms-1 Unidad {{ `${globalData.numeroUnidad}` }}
 
   router-link.barra-avance__boton--regresar(
     :class="[!controlLinks.back.name && 'barra-avance__boton--disable']"
@@ -35,6 +35,9 @@ export default {
   computed: {
     menuData() {
       return this.$config.menuPrincipal.menu
+    },
+    globalData() {
+      return this.$config.global
     },
     showBarra() {
       const enIntro = this.$route.fullPath.includes('/introduccion')
@@ -218,6 +221,20 @@ export default {
           },
           back: {
             name: '',
+            hash: '',
+          },
+        }
+      } else if (
+        // Si estoy en el ultimo tema
+        this.$route.name === this.menuData[this.menuData.length - 2].nombreRuta
+      ) {
+        return {
+          next: {
+            name: 'sintesis',
+            hash: '',
+          },
+          back: {
+            name: this.menuData[this.menuData.length - 3].nombreRuta,
             hash: '',
           },
         }

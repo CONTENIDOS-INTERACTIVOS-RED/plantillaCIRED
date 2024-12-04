@@ -1,6 +1,6 @@
 <template lang="pug">
 .curso-main-container.pb-3
-  BannerInterno(:titulo="'FUNDAMENTACIÓN JURÍDICA - unidad 1'" :subTitulo="'INTRODUCCIÓN'")
+  BannerInterno(:subTitulo="'NOMBRE TEMA 3'")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5.overflow-hidden
     #t_1_1.titulo-segundo
       div.d-flex
@@ -116,25 +116,45 @@
           .tarjeta.color-acento-botones.p-3(x="9%" y="81%" numero="+")
             .h5.mb-2 titulo
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum tortor at blandit congue. Pellentesque vel felis posuere, molestie metus
-    .bg-full-width.border-top.color-primario
+    
+    #t_1_6.titulo-segundo
+      div.d-flex
+        span.me-3 1.6  
+        h2 Linea de tiempo D
+
+    LineaTiempoD.color-secundario.mb-5
+      p(numero="1" titulo="Praesent luctus") Lorem ipsum dolor sit amet, 
+      p(numero="2" titulo="Praesent luctus") Lorem ipsum dolor sit amet, 
+      p(numero="3" titulo="Praesent luctus") Lorem ipsum dolor sit amet, 
+    
+    #t_1_7.titulo-segundo
+      div.d-flex
+        span.me-3 1.7
+        h2 Tarjeta de audio
+    
+      TarjetaAudio.color-primario.bg-white.mb-5(
+        texto="Proceso de descarga de MySQL Server Community y MySQL Workbench"
+        tiempo
+        :audio="require('../../assets/componentes/audios/audio-ej.mp3')"
+        @audio-hover="mostrarIndicadorTarjetaAudio = false"
+      )
+
+    .bg-full-width.border-top-9-azul
       .px-4.p-md-5
-        h2 MATERIAL COMPLEMENTARIO
+        h2 Material complementario
         .row
-          .col-12.col-md-6.col-lg-7
-            p Los invitamos a explorar el material complementario de este curso, en esta sección encontrará recursos que le permitirán profundizar  y enriquecer su aprendizaje en los temas tratados en esta unidad.
+          .col-12.col-md-6.col-lg-8
+            p.text-small
             p.d-flex.my-4
-              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-              span Peña, G. E. G. (2021). Las fuentes del derecho. Lecciones de introducción al derecho, 189
+              img.me-3.mb-auto.mt-2(src='@/assets/componentes/youtube-icon.svg' :style="{'max-width':'16px'}")
+              span.text-small
             p.d-flex.my-4
-              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-              span Suárez, E. (2020). Introducción al derecho. Ediciones UNL
+              img.me-3.mb-auto.mt-2(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span.text-small
             p.d-flex.my-4
-              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-              span De Sousa, M. T. (2019). Introducción al derecho. Temis 
-            p.d-flex.my-4
-              img.me-3(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
-              span Nieto, A. (2019). Una introducción al derecho.
-          .col-12.col-md-6.col-lg-3.offset-lg-1
+              img.me-3.mb-auto.mt-2(src='@/assets/componentes/link.svg' :style="{'max-width':'16px'}")
+              span.text-small
+          .col-12.col-md-6.col-lg-3
             figure
               img(src='@/assets/componentes/material-complementario.svg', alt='Texto que describa la imagen')
 </template>
@@ -153,14 +173,6 @@ export default {
 </script>
 
 <style lang="sass">
-.bg-img-1
-  position: absolute
-  max-width: none
-  width: calc( 100% + 96px  )
-  height: calc( 100% + 96px )
-  left: -48px
-  top: -48px
-  inline-size: auto
 .tabs-content
   background-color: $color-sistema-h
 .img-infografica

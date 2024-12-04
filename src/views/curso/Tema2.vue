@@ -1,6 +1,6 @@
 <template lang="pug">
 .curso-main-container.pb-3
-  BannerInterno(:titulo="'FUNDAMENTACIÓN JURÍDICA - unidad 1'" :subTitulo="'NOMBRE TEMA 2'")
+  BannerInterno(:subTitulo="'NOMBRE TEMA 2'")
   .container.tarjeta.tarjeta--blanca.p-4.p-md-5
 
     #t_2_1.titulo-segundo

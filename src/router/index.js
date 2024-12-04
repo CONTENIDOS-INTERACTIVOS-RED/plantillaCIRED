@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Inicio from '../views/Inicio.vue'
 import Curso from '../views/Curso.vue'
 import Home from '../views/Home.vue'
 
@@ -27,6 +26,14 @@ const router = new VueRouter({
         name: 'tema1',
       },
       children: [
+        {
+          path: 'sintesis',
+          name: 'sintesis',
+          component: () =>
+            import(
+              /* webpackChunkName: "sintesis" */ '../views/curso/Sintesis.vue'
+            ),
+        },
         {
           path: 'tema1',
           name: 'tema1',
@@ -80,12 +87,6 @@ const router = new VueRouter({
         import(
           /* webpackChunkName: "referencias" */ '../views/Referencias.vue'
         ),
-    },
-    {
-      path: '/sintesis',
-      name: 'sintesis',
-      component: () =>
-        import(/* webpackChunkName: "sintesis" */ '../views/Sintesis.vue'),
     },
   ],
   scrollBehavior(to, from) {
