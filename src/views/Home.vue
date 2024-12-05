@@ -27,7 +27,7 @@
               p.descripcion.mb-4.mb-lg-5.pb-lg-4.text-bold ¡El éxito está en cada esfuerzo que haces hoy!
 
               .button-container.mt-auto
-                router-link.btn-iniciar.w-100.w-md-auto(:to="{ name: 'tema1' }")
+                router-link.btn-iniciar.w-100.w-md-auto(:to="{ name: 'introduccion' }")
                   .iniciar-btn-container.w-100.w-md-auto
                     span.iniciar-btn-text INICIAR
                     .icon
