@@ -81,7 +81,7 @@
         figure
           img(src='@/assets/componentes/material-complementario.svg', alt='Texto que describa la imagen')
 
-    .bg-full-width.border-top.actividad.bg-color-4
+    .bg-full-width.border-top.actividad(style="background-color: #ebf1f5; border-top: 5px solid #f5c145 !important")
       .p-4.p-md-5
         #Actividad                
           <Actividad :cuestionario="cuestionario"/>
