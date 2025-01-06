@@ -67,6 +67,11 @@ async function buildAndPackage() {
       })
     })
 
+    // 5. Eliminar el directorio dist
+    console.log('Eliminando directorio dist...')
+    await fs.rmdir(path.join(__dirname, 'dist'), { recursive: true })
+    console.log('Directorio dist eliminado')
+
     console.log('¡Proceso completado con éxito!')
     console.log(
       `El archivo ZIP se guardó en: ${path.join(downloadsDir, 'material.zip')}`,
